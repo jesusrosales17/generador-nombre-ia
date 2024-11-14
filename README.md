@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Generador de Nombres para empesas y productos con IA
 
-## Getting Started
+Este proyecto es una aplicación web que utiliza la inteligencia artificial de Google para generar nombres para empresas y productos personalizados según palabras clave. Construido con Next.js, Tailwind CSS y TypeScript, ofrece una interfaz moderna y eficiente.
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Generación de Nombres Personalizados:** Utiliza la inteligencia artificial de Google para generar nombres basados en palabras clave proporcionadas por el usuario.
+- **Interfaz Intuitiva:** Navegación sencilla y diseño responsivo para una experiencia de usuario óptima.
+- **Tecnologías Modernas:** Desarrollado con Next.js para un rendimiento superior y Tailwind CSS para un diseño estilizado.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Requisitos Previos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Node.js](https://nodejs.org/) (versión 14 o superior)
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/) como gestor de paquetes
 
-## Learn More
+## Instalación
 
-To learn more about Next.js, take a look at the following resources:
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clona este repositorio:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/jesusrosales17/generador-nombre-ia.git
 
-## Deploy on Vercel
+2. **Navega a la carpeta del proyecto:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   cd generador-nombre-ia
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Instala las dependencias:**
+
+   ```bash
+   npm install
+   ```
+   
+   o
+
+   ```bash
+   yarn install
+   ```
+4. **Configurar las variables de entorno:**
+
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edita el archivo `.env` con tus propias claves de API de Google Generative AI.
+
+5. **Inicia el servidor:**
+
+   ```bash
+   npm run dev
+   ```
+
+   o
+
+   ```bash
+   yarn dev
+   ```
+
+   El servidor se iniciara en el puerto 3000. ¡Diviertete con la generación de nombres con IA!
