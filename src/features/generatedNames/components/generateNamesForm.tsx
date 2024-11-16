@@ -10,9 +10,9 @@ export const GenerateNamesForm = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="border w-full lg:w-6/12 p-5 rounded shadow-lg backdrop-filter backdrop-blur-lg bg-white/20 min-h-fit"
+      className="border w-full lg:w-6/12 p-5 rounded shadow-lg backdrop-filter backdrop-blur-sm bg-white/20 min-h-fit"
     >
-      <h2 className="text-center text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
+      <h2 className="text-center text-2xl font-semibold text-gray-800  mb-4">
         Generar nombres
       </h2>
 
@@ -22,7 +22,7 @@ export const GenerateNamesForm = () => {
         <div className="flex flex-col gap-2">
           <label
             htmlFor="keywords"
-            className="text-sm font-medium text-gray-700 dark:text-gray-200"
+            className="text-sm font-medium text-gray-700 "
           >
             Palabras claves
           </label>
@@ -46,7 +46,7 @@ export const GenerateNamesForm = () => {
         <div className="flex flex-col gap-2">
           <label
             htmlFor="style"
-            className="ext-sm font-medium text-gray-700 dark:text-gray-200"
+            className="ext-sm font-medium text-gray-700 "
           >
             Estilo
           </label>

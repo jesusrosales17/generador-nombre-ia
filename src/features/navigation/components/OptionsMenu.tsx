@@ -15,7 +15,7 @@ export const OptionsMenu = () => {
             option == "resultados"
               ? "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
               : "bg-white/30"
-          }  backdrop-blur-md rounded-lg shadow-lg border p-2`}
+          }  rounded-lg shadow-lg border p-2`}
         >
           <IoStarOutline />
           Resultados
@@ -26,7 +26,7 @@ export const OptionsMenu = () => {
             option == "favoritos"
               ? "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
               : "bg-white/30"
-          }  backdrop-blur-md rounded-lg shadow-lg border p-2`}
+          }   rounded-lg shadow-lg border p-2`}
         >
           <IoHeartOutline />
           Favoritos

@@ -1,6 +1,6 @@
 import { formatTime } from './timeFormatter';
 
-const requestLimit = 60;
+const requestLimit = 15;
 const hourInMs = 60 * 60 * 1000;
 
 interface UserRequest {
