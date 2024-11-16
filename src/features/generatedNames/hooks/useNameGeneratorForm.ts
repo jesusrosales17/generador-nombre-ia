@@ -13,6 +13,7 @@ export const useNameGeneratorForm = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     if (!formData.keywords) {
       setError("Todos los campos son obligatorios");
       return;
@@ -31,8 +32,8 @@ export const useNameGeneratorForm = () => {
         return;
       }
 
-      const data = await response.json();
-      dispatch(setNames(data));
+      const result = await response.json();
+      dispatch(setNames(result.data));
     } catch (error) {
       setError("Ocurrió un error inesperado");
     } finally {

@@ -69,7 +69,12 @@ export const GenerateNamesForm = () => {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full flex justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white mt-5 py-2 rounded-md"
+        className={`w-full flex justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white mt-5 py-2 rounded-md
+            ${
+              isLoading
+                ? "cursor-not-allowed opacity-50"
+                : "cursor-pointer opacity-100"}
+          `}
       >
         <IoSparkles className="mr-2" size={20} />
         {isLoading ? "Generando..." : "Generar"}
