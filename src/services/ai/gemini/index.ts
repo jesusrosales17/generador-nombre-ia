@@ -1,0 +1,1 @@
+export {generateNamesWithIa} from './geminiService'

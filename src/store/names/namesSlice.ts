@@ -1,14 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { NameObject, NamesState } from "../interfaces/namesObject";
 
-interface NamesState {
-  names: NameObject[] ;
-}
 
-export interface NameObject {
-  name: string;
-  description: string;
-  isFavorite?: boolean;
-}
 const initialState: NamesState = {
   names: []
 }
@@ -20,9 +13,8 @@ const namesSlice = createSlice({
       state.names = action.payload;
     },
 
-    selectName: (state, action: PayloadAction<NameObject>) => {
+    updateName: (state, action: PayloadAction<NameObject>) => {
 
-      console.log('hola')
       const newNames = state.names.map((name) => {
         if (name.name === action.payload.name) {
           return { ...name, isFavorite: !name.isFavorite };
@@ -35,5 +27,5 @@ const namesSlice = createSlice({
   },
 });
 
-export const { setNames, selectName } = namesSlice.actions;
+export const { setNames, updateName } = namesSlice.actions;
 export default namesSlice.reducer;

@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { IoHeartOutline, IoStarOutline } from "react-icons/io5";
-import NamesGrid from "./NamesGrid";
-import { FavoritesGrid } from "./FavoritesGrid";
+import { NamesList } from "@/features/generatedNames";
+import { FavoritesList } from "@/features/favorites";
 
-export const OptionsContainer = () => {
+export const OptionsMenu = () => {
   const [option, setOption] = useState("resultados");
   return (
     <>
@@ -35,9 +35,9 @@ export const OptionsContainer = () => {
 
       <hr className="mt-4 border-gray-300" />
 
-      {option == "resultados" && <NamesGrid />}
+      {option == "resultados" && <NamesList />}
 
-      {option == "favoritos" && <FavoritesGrid />}
+      {option == "favoritos" && <FavoritesList />}
     </>
   );
 };

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { generateNames } from '@/services/geminiServices';
+import { generateNamesWithIa } from '@/services/ai/gemini';
 const styleOptions = ["Creativo", "Formal", "Divertido", "Corto", "Elegante"];
 
-const requestLimit = 10;
+const requestLimit = 60;
 const hourInMs = 60 * 60 * 1000;
 
 // Definimos el tipo de cada solicitud en `requests`
@@ -103,7 +103,7 @@ export async function POST(req: Request) {
             throw new Error("Las palabras clave no deben superar los 100 caracteres");
           }
 
-        const names = await generateNames({ keywords, style });
+        const names = await generateNamesWithIa({ keywords, style });
         return NextResponse.json(names);
     } catch (error: Error | unknown) {
        if (error instanceof Error) {

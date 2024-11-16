@@ -1,85 +1,22 @@
 "use client";
-import { ErrorMessage } from "./ErrorMessage";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setNames } from "@/store/names/namesSlice";
 import { IoSparkles } from "react-icons/io5";
+import { FormErrorMessage, onInputChange } from "@/shared";
+import { useNameGeneratorForm } from "../hooks/useNameGeneratorForm";
 
-export const Form = () => {
-  const [data, setData] = useState({
-    keywords: "",
-    style: "Creativo",
-  });
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const dispath = useDispatch();
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError(null);
-    setIsLoading(true);
-
-    if (!data.keywords || !data.style) {
-      setError("Todos los campos son obligatorios");
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          keywords: data.keywords,
-          style: data.style,
-        }),
-      });
-
-      const resp = await response.json();
-
-      if(resp.error) {
-        
-        setError(resp.error);
-        setIsLoading(false);
-        return;
-      }
-
-      setError(null);
-
-      dispath(setNames(resp));
-      setIsLoading(false);
-    } catch (error: Error | unknown) {
-      if(error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Ocurrio un error inesperado.");
-      }
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
+export const GenerateNamesForm = () => {
+  const { error, formData, setFormData, onSubmit, isLoading } =
+    useNameGeneratorForm();
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       className="border w-full lg:w-6/12 p-5 rounded shadow-lg backdrop-filter backdrop-blur-lg bg-white/20 min-h-fit"
     >
       <h2 className="text-center text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
         Generar nombres
       </h2>
 
-      {error && <ErrorMessage error={error} />}
+      <FormErrorMessage error={error} />
 
       <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
@@ -95,8 +32,9 @@ export const Form = () => {
             name="keywords"
             placeholder="Ej. Tecnologia, celular, app"
             className=" p-2 border-2 rounded-md border-blue-600 focus:outline-none focus:border-blue-600 bg-white/40"
-            onChange={handleChange}
-            value={data.keywords}
+            onChange={(e) => onInputChange(e, setFormData)}
+            value={formData.keywords}
+            maxLength={100}
           />
           <p>
             <small className="text-xs text-gray-500">
@@ -115,8 +53,8 @@ export const Form = () => {
           <select
             id="style"
             name="style"
-            onChange={handleChange}
-            value={data.style}
+            onChange={(e) => onInputChange(e, setFormData)}
+            value={formData.style}
             className="p-2  border-2 rounded-md border-blue-600 focus:outline-none focus:border-blue-600 text-blue-900 bg-white/40"
           >
             <option value="Creativo">Creativo</option>

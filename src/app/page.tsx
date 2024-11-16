@@ -1,5 +1,5 @@
-import { Form } from "@/components/Form";
-import { OptionsContainer } from "@/components/OptionsContainer";
+import { GenerateNamesForm } from "@/features/generatedNames";
+import { OptionsMenu } from "@/features/navigation/";
 
 export const metadata = {
   title: "Generador de nombres para empresas y productos",
@@ -17,9 +17,9 @@ export default function HomePage() {
       </p>
 
       <div className=" w-full flex flex-col md:flex-row justify-between items-start  lg:w-11/12 mx-auto mt-10 gap-4">
-        <Form />
+        <GenerateNamesForm />
         <div className="backdrop-blur-sm bg-white/20 rounded-lg shadow-lg border p-4 h-100 w-full">
-         <OptionsContainer />
+         <OptionsMenu />
         </div>
       </div>
     </div>
