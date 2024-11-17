@@ -29,8 +29,8 @@ export const NameItem = ({ name, description, isFavorite }: NameObject) => {
   return (
     <div className="flex-col   rounded-lg shadow-lg border p-4 flex justify-between gap-3">
       <div>
-        <h4 className="font-bold  text-center text-blue-900 mb-2font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 ">{name}</h4>
-        <p className="text-gray-600 text-sm text- mt-4">{description}</p>
+        <h4 className="font-bold  text-center lg:text-left text-blue-900 mb-2font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 ">{name}</h4>
+        <p className="text-gray-600 text-sm mt-4">{description}</p>
       </div>
       <button onClick={handleToggleFavorite} className="w-auto self-end">
         {
