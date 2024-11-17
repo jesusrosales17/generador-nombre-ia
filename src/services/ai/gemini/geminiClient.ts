@@ -13,7 +13,7 @@ export const createGenerativeAIClient = () => {
 
   export const configureGenerativeModel = async (client: GoogleGenerativeAI) => {
     return  client.getGenerativeModel({
-      model: "gemini-1.5-pro",
+      model: "gemini-1.5-flash",
       generationConfig: {
         responseMimeType: "application/json",
         responseSchema: GENERATED_NAMES_SCHEMA,
