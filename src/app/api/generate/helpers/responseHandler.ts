@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 
 // Crea una respuesta de éxito
-export function createSuccessResponse(data: any, status = 200) {
+
+// Respuesta genérica de éxito
+export function createSuccessResponse<T>(data: T, status = 200) {
   return NextResponse.json({ success: true, data }, { status });
 }
 

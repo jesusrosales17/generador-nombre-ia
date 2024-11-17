@@ -1,7 +1,12 @@
 const styleOptions = ["Creativo", "Formal", "Divertido", "Corto", "Elegante"];
 
 // Valida el cuerpo de la solicitud
-export function validateRequestBody(body: any): void {
+interface RequestBody {
+  keywords: string;
+  style: string;
+}
+
+export function validateRequestBody(body: RequestBody): void {
   const { keywords, style } = body;
 
   if (!keywords || !style) {

@@ -28,13 +28,16 @@ export const useNameGeneratorForm = () => {
       });
 
       if (!response.ok) {
-        setError("Error al generar nombres");
+        const errorResponse = await response.json();
+        console.log(errorResponse)
+        setError(errorResponse.error ?? "Error al generar nombres");
         return;
       }
 
       const result = await response.json();
       dispatch(setNames(result.data));
     } catch (error) {
+      console.log(error)
       setError("Ocurrió un error inesperado");
     } finally {
       setIsLoading(false);
