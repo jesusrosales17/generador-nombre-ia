@@ -14,7 +14,7 @@ export default function HomePage() {
       {/* Bola 2 con gradiente */}
       <div className="fixed -bottom-0 -right-1 lg:-bottom-32 lg:-right-32 h-[40vh] w-[40vw] lg:h-[600px] lg:w-[600px] rounded-full bg-gradient-to-tl from-purple-400 via-pink-200 lg:via-pink-100 to-red-200 opacity-60 blur-3xl"></div>
 
-      <div className="p-2">
+      <div className="p-2 relative z-10">
         <h1 className="text-center mt-3 mb-4 text-4xl lg:text-6xl font-extrabold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 ">
           Generador de Nombres IA
         </h1>
